@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <listener>
+        <listener-class>main.app.AppContextListener</listener-class>
+    </listener>
+
+    <session-config>
+        <session-timeout>30</session-timeout> <!-- 30 minutes -->
+    </session-config>
+
+    <servlet>
+        <servlet-name>BillingServlet</servlet-name>
+        <servlet-class>main.servlets.BillingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BillingServlet</servlet-name>
+        <url-pattern>/billing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReportServlet</servlet-name>
+        <servlet-class>main.servlets.ReportServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReportServlet</servlet-name>
+        <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>main.servlets.CustomerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/customer</url-pattern>
+    </servlet-mapping>
+</web-app>
